@@ -1,5 +1,14 @@
 # Kubernetes 完全ガイド
 
+## 動作環境
+- macos に microk8s をインストールして使用したかったがイマイチだった（dockerの影響かも？）
+- 一旦アンインストールし multipass を使用することにした
+    - [Multipass orchestrates virtual Ubuntu instances](https://multipass.run/)
+- multipass で起動した仮想マシンを docker コマンドでも使用できるように設定する
+    - 仮想マシンに docker をインストールし、 dockerd の起動時のオプションに `-H tcp://0.0.0.0:2376` を追加する
+    - ホストマシンで docker を使用する時のオプションに `-H tcp://IP:2376` を追加する（IPは `multipass ls` で確認できる primary の IPv4 を使用する
+    - [multipassでつくるmacOS向けのDockerd & K8s環境 - Qiita](https://qiita.com/mumoshu/items/6ff56badcfabe5ab1f49)
+
 ## 4.5.3
 - create よりも apply を使う
     - apply はリソースの更新を行うコマンドだが、リソースが存在しない場合は作成を行う

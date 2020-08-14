@@ -1,5 +1,0 @@
-dotenv
-
-if which multipass &> /dev/null ; then
-     export DOCKER_HOST=$(multipass ls | grep -E '^primary' | awk '{print $3}'):2376
-fi

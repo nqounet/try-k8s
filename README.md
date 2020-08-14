@@ -4,10 +4,12 @@
 - macos に microk8s をインストールして使用したかったがイマイチだった（dockerの影響かも？）
 - 一旦アンインストールし multipass を使用することにした
     - [Multipass orchestrates virtual Ubuntu instances](https://multipass.run/)
-- multipass で起動した仮想マシンを docker コマンドでも使用できるように設定する
-    - 仮想マシンに docker をインストールし、 dockerd の起動時のオプションに `-H tcp://0.0.0.0:2376` を追加する
-    - ホストマシンで docker を使用する時のオプションに `-H tcp://IP:2376` を追加する（IPは `multipass ls` で確認できる primary の IPv4 を使用する
+- multipass で起動した仮想マシンを docker コマンドでも使用できるように設定したかったが、マウントが解決できなかった
     - [multipassでつくるmacOS向けのDockerd & K8s環境 - Qiita](https://qiita.com/mumoshu/items/6ff56badcfabe5ab1f49)
+- multipass で起動したマシンにログインして、各種コマンドを実行することにした
+    - primary は ~/Home にホストの ~ をマウントする
+    - path が異なるため（？）か、 `git status` が非常に遅くなる
+    - zsh で情報を取得していることもあり、ホストとゲストを行ったり来たりすると耐え難い遅さ
 
 ## 4.5.3
 - create よりも apply を使う

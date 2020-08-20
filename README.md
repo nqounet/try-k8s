@@ -23,6 +23,15 @@ pod.yaml
 z/pod.yaml
 ```
 
+## 4.5.12
+- 少なくともローカル環境では top コマンドを実行するとエラーが発生する
+- 解消するには metrics-server を使う必要があるようだ
+    - `kubectl top --help` を実行すると、以下のようなコメントが出る
+    - `This command requires Metrics Server to be correctly configured and working on the server.`
+    - [kubernetes-sigs/metrics-server: Cluster-wide aggregator of resource usage data.](https://github.com/kubernetes-sigs/metrics-server)
+        - 残念ながら、そのままでは動作しない
+        - SSL証明書やIPアドレスを解決する必要がありそうだが、今の所断念
+
 ## 動作環境
 ### 結論
 - `Docker Desktop` を `enable Kubernetes` して使用することにした

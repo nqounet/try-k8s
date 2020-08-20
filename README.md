@@ -31,6 +31,8 @@ z/pod.yaml
     - [kubernetes-sigs/metrics-server: Cluster-wide aggregator of resource usage data.](https://github.com/kubernetes-sigs/metrics-server)
         - 残念ながら、そのままでは動作しない
         - SSL証明書やIPアドレスを解決する必要がありそうだが、今の所断念
+    - 後で調べてみる
+    - [Kubernetesクラスタでmetrics-serverを導入してkubectl topやHPA(Horizontal Pod Autoscaler)を有効にする - Qiita](https://qiita.com/chataro0/items/28f8744e2781f730a0e6)
 
 ## 動作環境
 ### 結論
